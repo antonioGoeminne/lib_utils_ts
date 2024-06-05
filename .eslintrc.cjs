@@ -17,14 +17,14 @@ module.exports = {
   ],
   ignorePatterns: [
     '.eslintrc.cjs',
-    'vite.config.ts',
     'node_modules',
     'dist',
     'commitlint.config.cjs'
   ],
   parserOptions: {
     ecmaVersion: 'latest',
-    sourceType: 'module'
+    sourceType: 'module',
+    project: './tsconfig.json'
   },
   plugins: ['simple-import-sort'],
   rules: {
