@@ -31,6 +31,7 @@ module.exports = {
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
     '@typescript-eslint/no-explicit-any': 'error',
-    'no-console': 'warn'
+    'no-console': 'warn',
+    '@typescript-eslint/triple-slash-reference': 'off'
   }
 }
