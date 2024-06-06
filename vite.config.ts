@@ -12,5 +12,5 @@ export default defineConfig({
     target: 'es6',
     minify: false
   },
-  plugins: [dts({ outDir: 'dist' })]
+  plugins: [dts({ outDir: 'dist', exclude: '**/*.test.ts' })]
 })
