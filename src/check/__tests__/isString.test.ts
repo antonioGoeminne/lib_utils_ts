@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 
-import { isString } from '../isString'
+import { isString } from '..'
 
 describe('is string', () => {
   it.each([
