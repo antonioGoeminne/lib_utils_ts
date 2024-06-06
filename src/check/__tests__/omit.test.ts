@@ -27,6 +27,10 @@ describe('omit to arrays', () => {
     expect(omit([false, true], [false])).toStrictEqual([true])
   })
 
+  it('omit([], ["a"]) should return []', () => {
+    expect(omit([], ['a'])).toStrictEqual([])
+  })
+
   it('omit([false, true, "a", null], [null]) should return [false, true, "a"]', () => {
     expect(omit([false, true, 'a', null], [null])).toStrictEqual([
       false,
@@ -47,6 +51,10 @@ describe('omit to objects', () => {
 
   it('omit({ a: "", b: "", c: "" }, ["a", "b", "c"]) should return { }', () => {
     expect(omit({ a: '', b: '', c: '' }, ['b', 'c', 'a'])).toStrictEqual({})
+  })
+
+  it('omit({}, ["a"]) should return {}', () => {
+    expect(omit({}, ['a'])).toStrictEqual({})
   })
 
   it('omit({ ...product }, ["name"]) should return product without name', () => {
