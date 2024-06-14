@@ -1,6 +1,4 @@
 export const omit = (value: unknown, path: unknown[]): unknown => {
-  if (path.length === 0) return value
-
   const isCountable = value instanceof Object
   if (!isCountable) return value
   if (path.length === 0) return value
