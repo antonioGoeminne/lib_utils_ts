@@ -48,6 +48,18 @@ describe('pick to objects', () => {
   it('pick({}, [2]) should return {}', () => {
     expect(pick({}, [2])).toStrictEqual({})
   })
+
+  it('pick({a: 2, b:[]}, ["a"]) should return {a: 2}', () => {
+    expect(pick({ a: 2, b: [] }, ['a'])).toStrictEqual({ a: 2 })
+  })
+
+  it('pick(undefined, [1]) should return undefined', () => {
+    expect(pick(undefined, [1])).toStrictEqual(undefined)
+  })
+
+  it('pick(1, []) should return 1', () => {
+    expect(pick(1, [])).toStrictEqual(1)
+  })
 })
 
 describe('pick to different types', () => {
@@ -55,7 +67,8 @@ describe('pick to different types', () => {
     { tested: { data: false, path: [''] }, expected: false },
     { tested: { data: true, path: [''] }, expected: true },
     { tested: { data: 'string', path: [''] }, expected: 'string' },
-    { tested: { data: null, path: [''] }, expected: null }
+    { tested: { data: null, path: [''] }, expected: null },
+    { tested: { data: null, path: [] }, expected: null }
   ])(
     'pick($tested.data, $tested.path) should be $expected',
     ({ tested, expected }) => {

@@ -1,6 +1,4 @@
 export const pick = (value: unknown, path: unknown[]): unknown => {
-  if (path.length === 0) return value
-
   const isCountable = value instanceof Object
   if (!isCountable) return value
   if (path.length === 0) return value
@@ -24,10 +22,7 @@ export const pick = (value: unknown, path: unknown[]): unknown => {
     updatedValue.push({ [filteredValue[0]]: filteredValue[1] })
   })
 
-  return updatedValue.reduce((p, a) => {
-    if (p instanceof Object && a instanceof Object) {
-      return { ...p, ...a }
-    }
-    return {}
-  }, {})
+  const result = Object.assign({}, ...updatedValue)
+
+  return result
 }

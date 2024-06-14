@@ -38,6 +38,10 @@ describe('omit to arrays', () => {
       'a'
     ])
   })
+
+  it('omit([], []) should return []', () => {
+    expect(omit([], [])).toStrictEqual([])
+  })
 })
 
 describe('omit to objects', () => {
@@ -70,6 +74,26 @@ describe('omit to objects', () => {
       objectID: 'VLimDLycClt4CJ1bEbK4'
     })
   })
+
+  it('omit({}, []) should return {}', () => {
+    expect(omit({}, [])).toStrictEqual({})
+  })
+
+  it('omit({}, [2]) should return {}', () => {
+    expect(omit({}, [2])).toStrictEqual({})
+  })
+
+  it('omit({a: 2, b:[]}, ["a"]) should return {b: []}', () => {
+    expect(omit({ a: 2, b: [] }, ['a'])).toStrictEqual({ b: [] })
+  })
+
+  it('omit({a: 2, b:[]}, ["b"]) should return {a: 2}', () => {
+    expect(omit({ a: 2, b: [] }, ['b'])).toStrictEqual({ a: 2 })
+  })
+
+  it('omit(undefined, [1]) should return undefined', () => {
+    expect(omit(undefined, [1])).toStrictEqual(undefined)
+  })
 })
 
 describe('omit to different types', () => {
@@ -81,7 +105,9 @@ describe('omit to different types', () => {
     { tested: { data: false, path: [''] }, expected: false },
     { tested: { data: true, path: [''] }, expected: true },
     { tested: { data: 'string', path: [''] }, expected: 'string' },
-    { tested: { data: null, path: [''] }, expected: null }
+    { tested: { data: null, path: [''] }, expected: null },
+    { tested: { data: null, path: [] }, expected: null },
+    { tested: { data: undefined, path: [] }, expected: undefined }
   ])(
     'omit($tested.data, $tested.path) should be $expected',
     ({ tested, expected }) => {
