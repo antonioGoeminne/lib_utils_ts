@@ -1,13 +1,13 @@
 {
-  "name": "lib_utils_ts",
+  "name": "agnostyc_lib_utils_ts",
   "version": "0.0.0",
   "type": "module",
-  "main": "./dist/lib_utils_ts.js",
+  "main": "./dist/agnostyc_lib_utils_ts.js",
   "types": "./dist/src/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/lib_utils_ts.js",
-      "export": "./dist/lib_utils_ts.umd.cjs"
+      "import": "./dist/agnostyc_lib_utils_ts.js",
+      "export": "./dist/agnostyc_lib_utils_ts.umd.cjs"
     }
   },
   "publishConfig": {
