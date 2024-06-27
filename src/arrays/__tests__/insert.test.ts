@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 import { describe, expect, it } from 'vitest'
 
-import { insert } from '../insert'
+import { insert } from '..'
 
 describe('insert', () => {
   it('insert([1,2,3], ["a"], 1) should return [1,"a", 2, 3]', () => {
