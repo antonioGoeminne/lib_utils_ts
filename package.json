@@ -1,8 +1,21 @@
 {
   "name": "lib_utils_ts",
-  "private": true,
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/lib_utils_ts.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/lib_utils_ts.js",
+      "export": "./dist/lib_utils_ts.umd.cjs"
+    }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc && vite build",
     "prepare": "husky install",
