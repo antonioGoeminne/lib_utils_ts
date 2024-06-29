@@ -7,7 +7,7 @@ export default mergeConfig(
     test: {
       globals: true,
       coverage: {
-        exclude: ['commitlint.config.cjs', '.eslintrc.cjs'],
+        exclude: ['commitlint.config.cjs', '.eslintrc.cjs', 'src/index.ts'],
         thresholds: {
           lines: 90,
           functions: 90,

@@ -1,6 +1,6 @@
 {
   "name": "agnostyc_lib_utils_ts",
-  "version": "0.0.0",
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/agnostyc_lib_utils_ts.js",
   "types": "./dist/src/index.d.ts",
