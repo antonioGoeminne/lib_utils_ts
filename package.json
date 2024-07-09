@@ -2,7 +2,7 @@
   "author": "Antonio Goeminne",
   "license": "MIT",
   "name": "agnostyc_lib_utils_ts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "main": "dist/agnostyc_lib_utils_ts.umd.cjs",
   "module": "dist/agnostyc_lib_utils_ts.js",
